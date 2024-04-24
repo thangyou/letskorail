@@ -1,0 +1,35 @@
+
+spring:
+  application:
+    name: letskorail
+  jpa:
+    # ?? ?? ??
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+    # ??? ?? ? data.sql ??
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+
+  datasource:
+    url: jdbc:h2:mem:testdb # H2 Console ???
+    username: sa
+
+  h2:
+    console:
+      enabled: true
+
+springdoc:
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+  swagger-ui:
+    path: /
+    disable-swagger-default-url: true
+    display-request-duration: true
+    operations-sorter: alpha
+
+server:
+  port: 8888
